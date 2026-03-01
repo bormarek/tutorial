@@ -2,11 +2,9 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# Kopiuj i instaluj zależności (cache layer)
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Kopiuj kod aplikacji
 COPY app/ ./app/
 
 EXPOSE 8000
